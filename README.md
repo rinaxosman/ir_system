@@ -122,8 +122,28 @@ This will output evaluation metrics such as:
 ---
 
 ## 6. Query Results & Discussion
-- **First 10 Answers for First 2 Queries:** (Present ranked results for sample queries.)
-- **Discussion:** (Compare retrieval effectiveness for different query formulations: title-only vs. full-text queries.)
+- **First 10 Answers for First 2 Queries:**
+- - 1 Q0 31715818 1 0.9826 run_31715818_exact
+- 1 Q0 1848452 2 0.2338 run_31715818_exact
+- 1 Q0 169264 3 0.2258 run_31715818_exact
+- 1 Q0 502797 4 0.2161 run_31715818_exact
+- 1 Q0 17327939 5 0.2146 run_31715818_exact
+- 1 Q0 8891333 6 0.2082 run_31715818_exact
+- 1 Q0 9988425 7 0.1881 run_31715818_exact
+- 1 Q0 11360430 8 0.1876 run_31715818_exact
+- 1 Q0 8318286 9 0.1858 run_31715818_exact
+- 1 Q0 5567223 10 0.1847 run_31715818_exact
+- 3 Q0 14717500 1 0.9001 run_14717500_exact
+- 3 Q0 15155862 2 0.3021 run_14717500_exact
+- 3 Q0 23389795 3 0.2811 run_14717500_exact
+- 3 Q0 2739854 4 0.2520 run_14717500_exact
+- 3 Q0 4632921 5 0.1981 run_14717500_exact
+- 3 Q0 2485101 6 0.1888 run_14717500_exact
+- 3 Q0 24144677 7 0.1736 run_14717500_exact
+- 3 Q0 15663829 8 0.1696 run_14717500_exact
+- 3 Q0 9196472 9 0.1689 run_14717500_exact
+- 3 Q0 22067786 10 0.1682 run_14717500_exact
+- **Discussion:** The results of the full-text queries always had higher scores at the same ranking however they would result in an almost completely different ranking with most entries in the top 10 from a title-only query ranking significantly lower on a full-text query if the rank at all.
 
 ---
 
