@@ -2,7 +2,7 @@
 
 ## Team Members
 - Rina Osman - 300222206
-- Fatima Ghadbawi - [student number]
+- Fatima Ghadbawi - 300301842
 - Uvil Dahanayake - 300199138
 
 ## Contributions
