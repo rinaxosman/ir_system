@@ -109,9 +109,85 @@ This will output evaluation metrics such as:
 ---
 
 ## 4. Algorithms, Data Structures, and Optimizations
-- **Preprocessing:** Through preprocessing, we tokenize each document before attempting any information retrieval. Tokenization is effectively splitting up the text within each document into an array of terms, this way when checking querying documents we can check to see if they have our queried terms rather than using some sliding window method. Of course, documents will have a lot of words that are duplicates or conjugations of one or even strings that aren't words such as punctuation. This is where we use stopword removal to remove punctuation and special characters and use stemming to group together what is in essence the same word just with different endings due to tense or plurality.
-- **Indexing:** The inverted index structure is a dictionary that stores each token and a list of document IDs in which the token appears. The program takes a document and starts adding the document ID for each token within that doc.
-- **Retrieval & Ranking:** The cosine similarity ranking method determines how similar the query and the document are by comparing their vectors
+
+### **Preprocessing**
+For preprocessing, we implemented a pipeline that cleans and prepares the text for indexing and retrieval. The steps include:
+
+- **Tokenization**: We used `nltk.word_tokenize()` to split the text into individual words.
+- **Stopword Removal**: We used NLTK’s predefined list of English stopwords and also allowed for a custom stopword list to further filter out common words that do not contribute to meaningful retrieval.
+- **Lowercasing**: All text was converted to lowercase to ensure case-insensitive matching.
+- **Punctuation and Number Removal**: Using regex (`re.sub(r'[^\w\s]', '', text)`) to eliminate punctuation and numbers, ensuring only meaningful words are retained.
+- **Stemming**: We applied the **Porter Stemmer** to reduce words to their root forms (e.g., “running” → “run”). This helps normalize variations of the same word.
+- **Vocabulary Storage**: We stored unique words in a set to ensure an efficient lookup.
+
+**Optimizations:**
+✔ **Preprocessing is applied in a single pass** to improve efficiency.  
+✔ **Regex is used for fast text cleaning.**  
+✔ **Set operations** are used for stopword removal to speed up lookups.  
+✔ **Processes documents line-by-line** to handle large datasets efficiently.
+
+---
+
+### **Indexing**
+To efficiently retrieve relevant documents, we constructed an **inverted index**, which maps terms to document IDs.
+
+- **Data Structure Used**: We implemented a **dictionary-based inverted index** (`defaultdict(set)`) where:
+  - **Key**: A word from the corpus (token)
+  - **Value**: A **set** of document IDs that contain the word.
+
+- **Indexing Algorithm**:
+  1. **Read the preprocessed corpus** from `preprocessed_corpus.json`.
+  2. **Extract tokens from each document** and associate them with their `doc_id`.
+  3. **Update the inverted index** by adding document IDs to the posting list for each token.
+  4. **Convert sets to lists** before saving the final index as `inverted_index.json` for efficient storage.
+
+- **Storage Format (JSON example)**:
+```json
+{
+    "brain": ["4983", "72159", "152245"],
+    "develop": ["4983", "106031"],
+    "function": ["4983", "116792"]
+}
+```
+
+**Optimizations:**
+✔ **Uses `defaultdict(set)` to prevent missing keys and speed up insertions.**  
+✔ **Stores document IDs in sets first to remove duplicates before converting to lists.**  
+✔ **Processes documents one-by-one to minimize memory usage.**
+
+---
+
+### **Retrieval & Ranking**
+We implemented **TF-IDF weighting combined with cosine similarity** to rank documents based on their relevance to a given query.
+
+- **TF-IDF Vectorization**:
+  - We used `TfidfVectorizer()` from `sklearn` to convert both **documents and queries into numerical vectors**.
+  - **TF-IDF (Term Frequency-Inverse Document Frequency)** helps assign importance to terms based on their frequency in a document vs. the entire corpus.
+
+- **Cosine Similarity Calculation**:
+  - Queries are **transformed into TF-IDF vectors**.
+  - **Cosine similarity** is computed between each query vector and all document vectors.
+  - Documents are **ranked in descending order** based on their similarity scores.
+
+- **Ranking Algorithm**:
+  1. **Convert the query to a TF-IDF vector** using the same vectorizer as the documents.
+  2. **Compute cosine similarity** between the query and all document vectors.
+  3. **Sort the results by similarity score** in descending order.
+  4. **Return the top 100 documents** for evaluation.
+
+- **Output Format**:
+```plaintext
+1 Q0 4983 1 0.8032 run_name
+1 Q0 152245 2 0.7586 run_name
+1 Q0 72159 3 0.6517 run_name
+```
+
+**Optimizations:**
+✔ **Uses `TfidfVectorizer()` for efficient text vectorization.**  
+✔ **Precomputes document TF-IDF vectors** to avoid redundant calculations.  
+✔ **Uses sparse matrix operations** to reduce memory overhead.  
+✔ **Sorts only the top `100` results** instead of computing all similarities.  
+
 
 ---
 
