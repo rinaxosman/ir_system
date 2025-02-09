@@ -62,9 +62,13 @@ Title + Full-text retrieval (results_text.txt)
 - results/results_text.txt
 
 The retrieval script: 
+
 ✔ Loads the preprocessed corpus and inverted index
+
 ✔ Selects only odd-numbered queries from test.tsv
+
 ✔ Retrieves relevant documents using TF-IDF + Cosine Similarity
+
 ✔ Outputs results in TREC format
 
 ### 3.5 Evaluate Results using trec_eval
