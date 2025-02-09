@@ -22,7 +22,6 @@
 ---
 
 ## 3. How to Run the Program
-(Step-by-step guide to setting up the environment, running the scripts, and obtaining results.)
 
 ### 3.1 Install Dependencies
 Ensure you have Python 3.8+ installed. Then, install all required dependencies:
