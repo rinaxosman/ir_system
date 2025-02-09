@@ -30,8 +30,8 @@ class Preprocessor:
         text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
         tokens = word_tokenize(text)  # Tokenize text
         tokens = [token for token in tokens if token not in self.stopwords and len(token) > 2]  # Remove stopwords
-        if self.use_stemming:
-            tokens = [self.stemmer.stem(token) for token in tokens]  # Apply stemming
+        # if self.use_stemming:
+        #     tokens = [self.stemmer.stem(token) for token in tokens]  # Apply stemming
         
         self.vocabulary.update(tokens)  # Add tokens to vocabulary
         return tokens
