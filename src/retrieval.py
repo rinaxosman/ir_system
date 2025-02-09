@@ -67,7 +67,6 @@ def retrieve_and_rank(query, query_id, run_name, top_k=100):
     for rank, (doc_id, score) in enumerate(ranked_docs, start=1):
         results.append(f"{query_id} Q0 {doc_id} {rank} {score:.4f} {run_name}")
     
-    results.append("-----------")
     return results
 
 # Run retrieval for all queries
