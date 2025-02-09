@@ -3,17 +3,19 @@
 ## Team Members
 - Rina Osman - 300222206
 - Fatima Ghadbawi - [student number]
-- Name - [student number]
+- Uvil Dahanayake - 300199138
 
 ---
 
 ## 1. Introduction
 (Provide an overview of the project, objectives, and brief summary of the IR system.)
+This project aims to build a simple information retrieval system that can search a given collection of documents, in our case a collection provided by Scifact, and return a list of related documents each with its own ranking and score.
 
 ---
 
 ## 2. Functionality of the Program
 (Describe the functionality of each component in the system: preprocessing, indexing, retrieval, and ranking.)
+The first stage is preprocessing in which our program goes through each document removing and formatting text in a way that makes it easier to search through and create a more meaningful index. We removed punctuation, numbers, and stopwords while also using the Porter stemmer to normalize similar words that have different inflexional endings before finally saving the processed corpus. We then move on to indexing where we go through each of the preprocessed documents and add tokens to our inverted index with the document ID in which they appear. With our inverted index made we can now retrieve related documents and assign them a score based on cosine similarity.
 
 ---
 
