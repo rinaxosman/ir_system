@@ -212,6 +212,7 @@ Query ID: 1
 - 1 Q0 87430549 3 0.2121 run_31715818_title
 - 1 Q0 29321530 4 0.2110 run_31715818_title
 - 1 Q0 41782935 5 0.1914 run_31715818_title
+
 Query ID: 3
 - 3 Q0 14717500 1 1.0000 run_14717500_title
 - 3 Q0 24530130 2 0.3664 run_14717500_title
@@ -227,6 +228,7 @@ Query ID: 1
 - 1 Q0 1848452 3 0.2374 run_31715818_text
 - 1 Q0 87430549 4 0.2306 run_31715818_text
 - 1 Q0 8891333 5 0.2251 run_31715818_text
+
 Query ID: 3
 - 3 Q0 14717500 1 0.9885 run_14717500_text
 - 3 Q0 23389795 2 0.3357 run_14717500_text
@@ -234,8 +236,8 @@ Query ID: 3
 - 3 Q0 2485101 4 0.2934 run_14717500_text
 - 3 Q0 15155862 5 0.2849 run_14717500_text
 
+**Discussion:** The results of the full-text queries always had higher scores at the same ranking however they would result in an almost completely different ranking with most entries in the top 10 from a title only query ranking significantly lower on a full-text query if the rank at all.
 
-- **Discussion:** The results of the full-text queries always had higher scores at the same ranking however they would result in an almost completely different ranking with most entries in the top 10 from a title only query ranking significantly lower on a full-text query if the rank at all.
 - The results, saved in 2_sample_queries.txt, were generated using top_2_sample.py. In both title-only and title + full-text retrieval, the top-ranked document is always an exact match with a score of 1.0000. This makes sense because the query directly matches an existing document in the dataset.
 - However, the order of the remaining documents changes between the two methods. Title-only retrieval ranks documents based on how similar their titles are to the query, prioritizing those with closely matching titles. Title + full-text retrieval, on the other hand, considers the entire content, which can cause documents with relevant text (but different titles) to rank higher.
 - Title-only retrieval is more precise because it retrieves documents with strong title similarity, but it may miss relevant content that doesn’t have a matching title. Title + full-text retrieval improves recall by finding documents where the query terms appear anywhere in the text, but this can also lead to some less relevant documents ranking higher.
