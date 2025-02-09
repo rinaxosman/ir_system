@@ -5,6 +5,30 @@
 - Fatima Ghadbawi - [student number]
 - Uvil Dahanayake - 300199138
 
+## Contributions
+
+Fatima Ghadbawi
+- Step 1 (Preprocessing): Developed the text preprocessing pipeline, including tokenization, stopword removal, stemming, and text cleaning.
+- Processed the SciFact dataset and structured it into preprocessed_corpus.jsonl for indexing.
+- Extracted the total vocabulary size and generated a sample of 100 tokens for reporting.
+- Explained the algorithms, data structures, and optimizations used in preprocessing, indexing, and retrieval.
+- Report Sections: #4, #5
+
+Rina Osman
+- Step 2 (Indexing): Built the inverted index and structured it for efficient document retrieval.
+- Step 3 (Retrieval & Ranking): Implemented cosine similarity to rank documents based on relevance to queries.
+- Processed and formatted the system output into Results.txt in TREC format.
+- Compared retrieval effectiveness between title-only and full-text queries.
+- Report Sections: #3, #6, #8
+
+
+Uvil Dahanayake
+- Ran trec_eval to compute Mean Average Precision (MAP) and analyzed evaluation metrics.
+- Assisted in comparing retrieval performance for different query modes.
+- Contributed to writing and structuring key report sections.
+- Wrote sections for Introduction, Functionality of the Program, Query Results & Discussion, and Mean Average Precision (MAP) Score.
+- Report Sections: #1, #2, #7
+
 ---
 
 ## 1. Introduction
