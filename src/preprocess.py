@@ -31,7 +31,7 @@ class Preprocessor:
         tokens = word_tokenize(text)  # Tokenize text
         tokens = [token for token in tokens if token not in self.stopwords and len(token) > 2]  # Remove stopwords
         if self.use_stemming:
-            tokens = [self.stemmer.stem(token) for token in tokens]  # Apply stemming
+            tokens = [self.stemmer.stem(token) for token in tokens]  # Apply porterstemming
         
         self.vocabulary.update(tokens)  # Add tokens to vocabulary
         return tokens
