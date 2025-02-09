@@ -2,7 +2,7 @@
 
 ## Team Members
 - Rina Osman - 300222206
-- Fatima Ghadbawi - [student number]
+- Fatima Ghadbawi - 300301842
 - Uvil Dahanayake - 300199138
 
 ## Contributions
@@ -109,21 +109,41 @@ This will output evaluation metrics such as:
 ---
 
 ## 4. Algorithms, Data Structures, and Optimizations
-- **Preprocessing:** (Explain tokenization, stopword removal, stemming, and any optimizations.)
-- **Indexing:** (Describe the inverted index structure and storage.)
-- **Retrieval & Ranking:** (Explain cosine similarity or BM25 ranking method.)
+- **Preprocessing:** Through preprocessing, we tokenize each document before attempting any information retrieval. Tokenization is effectively splitting up the text within each document into an array of terms, this way when checking querying documents we can check to see if they have our queried terms rather than using some sliding window method. Of course, documents will have a lot of words that are duplicates or conjugations of one or even strings that aren't words such as punctuation. This is where we use stopword removal to remove punctuation and special characters and use stemming to group together what is in essence the same word just with different endings due to tense or plurality.
+- **Indexing:** The inverted index structure is a dictionary that stores each token and a list of document IDs in which the token appears. The program takes a document and starts adding the document ID for each token within that doc.
+- **Retrieval & Ranking:** The cosine similarity ranking method determines how similar the query and the document are by comparing their vectors
 
 ---
 
 ## 5. Vocabulary Statistics
-- **Vocabulary Size:** (Provide the total count of unique tokens.)
-- **Sample of 100 Tokens:** (List a random selection of 100 words.)
+- **Vocabulary Size:** 30980
+- **Sample of 100 Tokens:** ['fmd', 'alcoholinduc', 'pressureoverload', 'rela', 'oligo', 'stanc', 'buyin', 'stereoisom', 'intradur', 'caudat', 'crcscs', 'pudefici', 'tast', 'dyt', 'redifferenti', 'drugadr', 'receptorhsp', 'transduct', 'cultureadapt', 'vacuol', 'phosphotyrosin', 'sodium', 'fluorodeoxyglucos', 'quadruplex', 'tsce', 'leukemiainiti', 'hypercalcem', 'femal', 'czechoslovakia', 'lessen', 'statur', 'phenomena', 'lateact', 'auscultatori', 'hungri', 'pomb', 'disproport', 'globus', 'cucumerina', 'subscriptionbas', 'cilengitid', 'hivseroposit', 'disclos', 'function', 'autophagydefici', 'ltd', 'nhejdepend', 'tumordriven', 'substratum', 'substantia', 'offici', 'ethnicityspecif', 'plu', 'tsctic', 'intract', 'bordetella', 'estron', 'selfassess', 'tmposit', 'ppilik', 'gabpba', 'endosteallin', 'fifteen', 'core', 'nfκbdepend', 'learn', 'pacapspecif', 'contextur', 'reductionoxid', 'oliguria', 'cfainduc', 'vecadherin', 'hivneg', 'abstractmicrorna', 'eufa', 'oscillometr', 'anthropomorph', 'retroperiton', 'scbvkaiyuan', 'dextran', 'account', 'restitut', 'cancerrecruit', 'codomin', 'hcmvpermiss', 'japonica', 'northeastern', 'zfns', 'anyth', 'eprostanoid', 'blastema', 'anticitrullin', 'spore', 'blooddifferenti', 'lymphotoxinalphabeta', 'endothelialhaematopoiet', 'sitedepend', 'adher', 'insitu', 'fecund']
 
 ---
 
 ## 6. Query Results & Discussion
-- **First 10 Answers for First 2 Queries:** (Present ranked results for sample queries.)
-- **Discussion:** (Compare retrieval effectiveness for different query formulations: title-only vs. full-text queries.)
+- **First 10 Answers for First 2 Queries:**
+- - 1 Q0 31715818 1 0.9826 run_31715818_exact
+- 1 Q0 1848452 2 0.2338 run_31715818_exact
+- 1 Q0 169264 3 0.2258 run_31715818_exact
+- 1 Q0 502797 4 0.2161 run_31715818_exact
+- 1 Q0 17327939 5 0.2146 run_31715818_exact
+- 1 Q0 8891333 6 0.2082 run_31715818_exact
+- 1 Q0 9988425 7 0.1881 run_31715818_exact
+- 1 Q0 11360430 8 0.1876 run_31715818_exact
+- 1 Q0 8318286 9 0.1858 run_31715818_exact
+- 1 Q0 5567223 10 0.1847 run_31715818_exact
+- 3 Q0 14717500 1 0.9001 run_14717500_exact
+- 3 Q0 15155862 2 0.3021 run_14717500_exact
+- 3 Q0 23389795 3 0.2811 run_14717500_exact
+- 3 Q0 2739854 4 0.2520 run_14717500_exact
+- 3 Q0 4632921 5 0.1981 run_14717500_exact
+- 3 Q0 2485101 6 0.1888 run_14717500_exact
+- 3 Q0 24144677 7 0.1736 run_14717500_exact
+- 3 Q0 15663829 8 0.1696 run_14717500_exact
+- 3 Q0 9196472 9 0.1689 run_14717500_exact
+- 3 Q0 22067786 10 0.1682 run_14717500_exact
+- **Discussion:** The results of the full-text queries always had higher scores at the same ranking however they would result in an almost completely different ranking with most entries in the top 10 from a title-only query ranking significantly lower on a full-text query if the rank at all.
 
 ---
 
@@ -134,3 +154,4 @@ This will output evaluation metrics such as:
 
 ## 8. Conclusion
 (Summarize key findings, possible improvements, and reflections on system performance.)
+We found that overall a full-text query was more effective than a title-only query.
