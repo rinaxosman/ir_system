@@ -122,28 +122,64 @@ This will output evaluation metrics such as:
 ---
 
 ## 6. Query Results & Discussion
-- **First 10 Answers for First 2 Queries:**
-- - 1 Q0 31715818 1 0.9826 run_31715818_exact
-- 1 Q0 1848452 2 0.2338 run_31715818_exact
-- 1 Q0 169264 3 0.2258 run_31715818_exact
-- 1 Q0 502797 4 0.2161 run_31715818_exact
-- 1 Q0 17327939 5 0.2146 run_31715818_exact
-- 1 Q0 8891333 6 0.2082 run_31715818_exact
-- 1 Q0 9988425 7 0.1881 run_31715818_exact
-- 1 Q0 11360430 8 0.1876 run_31715818_exact
-- 1 Q0 8318286 9 0.1858 run_31715818_exact
-- 1 Q0 5567223 10 0.1847 run_31715818_exact
-- 3 Q0 14717500 1 0.9001 run_14717500_exact
-- 3 Q0 15155862 2 0.3021 run_14717500_exact
-- 3 Q0 23389795 3 0.2811 run_14717500_exact
-- 3 Q0 2739854 4 0.2520 run_14717500_exact
-- 3 Q0 4632921 5 0.1981 run_14717500_exact
-- 3 Q0 2485101 6 0.1888 run_14717500_exact
-- 3 Q0 24144677 7 0.1736 run_14717500_exact
-- 3 Q0 15663829 8 0.1696 run_14717500_exact
-- 3 Q0 9196472 9 0.1689 run_14717500_exact
-- 3 Q0 22067786 10 0.1682 run_14717500_exact
-- **Discussion:** The results of the full-text queries always had higher scores at the same ranking however they would result in an almost completely different ranking with most entries in the top 10 from a title-only query ranking significantly lower on a full-text query if the rank at all.
+
+    python src/top_2_sample.py
+
+Top 10 Results for First 2 Queries (Title-Only Retrieval)
+
+Query ID: 1
+1 Q0 31715818 1 1.0000 run_31715818_title
+1 Q0 5415832 2 0.2493 run_31715818_title
+1 Q0 87430549 3 0.2121 run_31715818_title
+1 Q0 29321530 4 0.2110 run_31715818_title
+1 Q0 41782935 5 0.1914 run_31715818_title
+1 Q0 123859 6 0.1892 run_31715818_title
+1 Q0 20186814 7 0.1787 run_31715818_title
+1 Q0 20532591 8 0.1739 run_31715818_title
+1 Q0 6955746 9 0.1703 run_31715818_title
+1 Q0 24766509 10 0.1701 run_31715818_title
+Query ID: 3
+3 Q0 14717500 1 1.0000 run_14717500_title
+3 Q0 24530130 2 0.3664 run_14717500_title
+3 Q0 25643818 3 0.3477 run_14717500_title
+3 Q0 2739854 4 0.3379 run_14717500_title
+3 Q0 13777706 5 0.3284 run_14717500_title
+3 Q0 2095573 6 0.2864 run_14717500_title
+3 Q0 23389795 7 0.2848 run_14717500_title
+3 Q0 15155862 8 0.2434 run_14717500_title
+3 Q0 4421746 9 0.2430 run_14717500_title
+3 Q0 16691520 10 0.2396 run_14717500_title
+
+Top 10 Results for First 2 Queries (Title + Full Text Retrieval)
+
+Query ID: 1
+1 Q0 31715818 1 1.0000 run_31715818_text
+1 Q0 502797 2 0.2538 run_31715818_text
+1 Q0 1848452 3 0.2374 run_31715818_text
+1 Q0 87430549 4 0.2306 run_31715818_text
+1 Q0 8891333 5 0.2251 run_31715818_text
+1 Q0 5567223 6 0.1922 run_31715818_text
+1 Q0 169264 7 0.1917 run_31715818_text
+1 Q0 86129154 8 0.1914 run_31715818_text
+1 Q0 4457834 9 0.1896 run_31715818_text
+1 Q0 8318286 10 0.1874 run_31715818_text
+Query ID: 3
+3 Q0 14717500 1 0.9885 run_14717500_text
+3 Q0 23389795 2 0.3357 run_14717500_text
+3 Q0 2739854 3 0.3051 run_14717500_text
+3 Q0 2485101 4 0.2934 run_14717500_text
+3 Q0 15155862 5 0.2849 run_14717500_text
+3 Q0 4632921 6 0.1930 run_14717500_text
+3 Q0 23686039 7 0.1772 run_14717500_text
+3 Q0 9196472 8 0.1767 run_14717500_text
+3 Q0 13373629 9 0.1728 run_14717500_text
+3 Q0 11532028 10 0.1636 run_14717500_text
+
+
+- **Discussion:** The results of the full-text queries always had higher scores at the same ranking however they would result in an almost completely different ranking with most entries in the top 10 from a title only query ranking significantly lower on a full-text query if the rank at all.
+- The results, saved in 2_sample_queries.txt, were generated using top_2_sample.py. In both title-only and title + full-text retrieval, the top-ranked document is always an exact match with a score of 1.0000. This makes sense because the query directly matches an existing document in the dataset.
+- However, the order of the remaining documents changes between the two methods. Title-only retrieval ranks documents based on how similar their titles are to the query, prioritizing those with closely matching titles. Title + full-text retrieval, on the other hand, considers the entire content, which can cause documents with relevant text (but different titles) to rank higher.
+- Title-only retrieval is more precise because it retrieves documents with strong title similarity, but it may miss relevant content that doesn’t have a matching title. Title + full-text retrieval improves recall by finding documents where the query terms appear anywhere in the text, but this can also lead to some less relevant documents ranking higher.
 
 ---
 
