@@ -70,8 +70,8 @@ The retrieval script:
 ### 3.5 Evaluate Results using trec_eval
 To compute Mean Average Precision (MAP) and other evaluation metrics, run:
 
-trec_eval data/scifact/qrels/test.tsv results/results_title.txt
-trec_eval data/scifact/qrels/test.tsv results/results_text.txt
+➡️ trec_eval data/scifact/qrels/test.tsv results/results_title.txt
+➡️ trec_eval data/scifact/qrels/test.tsv results/results_text.txt
 
 This will output evaluation metrics such as:
 - Mean Average Precision (MAP)
