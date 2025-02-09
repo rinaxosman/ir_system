@@ -23,7 +23,7 @@
 ### 3.1 Install Dependencies
 Ensure you have Python 3.8+ installed. Then, install all required dependencies:
 
-➡️ **RUN: pip install -r requirements.txt**
+    pip install -r requirements.txt
 
 The required dependencies include:  
 - `nltk` (for text preprocessing)  
@@ -36,7 +36,7 @@ The required dependencies include:
 ### 3.2 Preprocess the Corpus
 Preprocessing extracts, tokenizes, and cleans the text data, then saves it as preprocessed_corpus.jsonl.
 
-➡️ **RUN: python src/preprocess.py**
+    python src/preprocess.py
 
 ✅ Expected Output:
 data/scifact/preprocessed_corpus.jsonl
@@ -44,7 +44,7 @@ data/scifact/preprocessed_corpus.jsonl
 ### 3.3 Create the Inverted Index
 Indexing builds the inverted index, which is necessary for retrieval.
 
-➡️ **RUN:python src/index.py**
+    python src/index.py
 
 ✅ Expected Output:
 data/scifact/inverted_index.json
@@ -55,7 +55,7 @@ Retrieval runs the search system using two different query modes:
 Title-only retrieval (results_title.txt)
 Title + Full-text retrieval (results_text.txt)
 
-➡️ **RUN:python src/retrieval.py**
+    python src/retrieval.py
 
 ✅ Expected Output:
 - results/results_title.txt
@@ -71,9 +71,8 @@ The retrieval script:
 ### 3.5 Evaluate Results using trec_eval
 To compute Mean Average Precision (MAP) and other evaluation metrics, run:
 
-➡️ trec_eval data/scifact/qrels/test.tsv results/results_title.txt
-
-➡️ trec_eval data/scifact/qrels/test.tsv results/results_text.txt
+    trec_eval data/scifact/qrels/test.tsv results/results_title.txt
+    trec_eval data/scifact/qrels/test.tsv results/results_text.txt
 
 This will output evaluation metrics such as:
 - Mean Average Precision (MAP)
