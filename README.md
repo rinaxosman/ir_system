@@ -204,8 +204,10 @@ Our final vocabulary consists of **30,980 unique tokens**, generated after token
 
     python src/top_2_sample.py
 
-### Top 10 Results for First 2 Queries (Title-Only Retrieval)
+### Top 10 Results for First 2 Queries (Title-Only Retrieval) vs (Title + Full Text Retrieval)
+- We displayed a sample of the top 5 each for simplicity, full results are found at 2_sample_queries.txt
 
+#### Title only
 Query ID: 1
 - 1 Q0 31715818 1 1.0000 run_31715818_title
 - 1 Q0 5415832 2 0.2493 run_31715818_title
@@ -220,8 +222,7 @@ Query ID: 3
 - 3 Q0 2739854 4 0.3379 run_14717500_title
 - 3 Q0 13777706 5 0.3284 run_14717500_title
 
-### Top 10 Results for First 2 Queries (Title + Full Text Retrieval)
-
+#### Title + Full Text
 Query ID: 1
 - 1 Q0 31715818 1 1.0000 run_31715818_text
 - 1 Q0 502797 2 0.2538 run_31715818_text
