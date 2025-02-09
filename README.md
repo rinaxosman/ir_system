@@ -109,9 +109,9 @@ This will output evaluation metrics such as:
 ---
 
 ## 4. Algorithms, Data Structures, and Optimizations
-- **Preprocessing:** Through preprocessing, we tokenize each of the documents before attempting any sort of information retrieval. Tokenization is effectively splitting up the text within each document into an array of terms, this way when checking querying documents we can check to see if they have our queried terms rather than using some sliding window method. Of course, documents will have a lot of words that are duplicates or conjugations of one or even strings that aren't words such as punctuation. This is where we use stopword removal to get rid of punctuation and special characters and use stemming to group together what is in essence the same word just with different endings due to tense or plurality.
+- **Preprocessing:** Through preprocessing, we tokenize each document before attempting any information retrieval. Tokenization is effectively splitting up the text within each document into an array of terms, this way when checking querying documents we can check to see if they have our queried terms rather than using some sliding window method. Of course, documents will have a lot of words that are duplicates or conjugations of one or even strings that aren't words such as punctuation. This is where we use stopword removal to remove punctuation and special characters and use stemming to group together what is in essence the same word just with different endings due to tense or plurality.
 - **Indexing:** The inverted index structure is a dictionary that stores each token and a list of document IDs in which the token appears. The program takes a document and starts adding the document ID for each token within that doc.
-- **Retrieval & Ranking:** The cosine similarity ranking method determines how similar the query and the document are.
+- **Retrieval & Ranking:** The cosine similarity ranking method determines how similar the query and the document are by comparing their vectors
 
 ---
 
@@ -154,3 +154,4 @@ This will output evaluation metrics such as:
 
 ## 8. Conclusion
 (Summarize key findings, possible improvements, and reflections on system performance.)
+We found that overall a full-text query was more effective than a title-only query.
