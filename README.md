@@ -264,5 +264,8 @@ Observations:
 ---
 
 ## 8. Conclusion
-(Summarize key findings, possible improvements, and reflections on system performance.)
-We found that overall a full-text query was more effective than a title-only query.
+In this assignment, we built an **Information Retrieval (IR) system** using the **vector space model**, with **TF-IDF weighting and cosine similarity** to rank documents from the SciFact dataset. Our **preprocessing pipeline** helped clean and organize the text by applying **tokenization, stopword removal, and stemming**, making indexing and retrieval more efficient. The **inverted index** allowed for fast lookups, and our **retrieval module** showed how different query methods (title only vs. full text) affected results.  
+
+From our evaluation, we found that **full-text retrieval ranked more relevant documents higher**, improving recall but sometimes lowering precision. The **Mean Average Precision (MAP) scores** backed this up, showing the trade off between precision and recall. While our system performed well, there’s room for improvement, such as using **BM25 for better ranking, query expansion for better recall, and incorporating synonyms or domain-specific terms**.  
+
+Overall, this project gave us a hands-on understanding of **search algorithms, ranking strategies, and the real-world challenges of information retrieval**, making it a great learning experience.
