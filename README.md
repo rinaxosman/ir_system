@@ -193,7 +193,7 @@ We implemented **TF-IDF weighting combined with cosine similarity** to rank docu
 
 ## 5. Vocabulary Statistics
 
-Our vocabulary ended up with **30,980 unique words** after going through tokenization, stopword removal, and stemming. Here's a sample of 100 random words, showing the variety of terms we pulled from the dataset. It includes a mix of scientific terms and stemmed words, which help make document retrieval more accurate and efficient.
+Our final vocabulary consists of **30,980 unique tokens**, generated after tokenization, stopword removal, and stemming. Below is a sample of 100 randomly selected tokens, showcasing the diversity of terms extracted from the dataset, including domain specific scientific terms and stemmed words, which are crucial for effective document retrieval.
 
 - **Vocabulary Size:** 30980
 - **Sample of 100 Tokens:** ['fmd', 'alcoholinduc', 'pressureoverload', 'rela', 'oligo', 'stanc', 'buyin', 'stereoisom', 'intradur', 'caudat', 'crcscs', 'pudefici', 'tast', 'dyt', 'redifferenti', 'drugadr', 'receptorhsp', 'transduct', 'cultureadapt', 'vacuol', 'phosphotyrosin', 'sodium', 'fluorodeoxyglucos', 'quadruplex', 'tsce', 'leukemiainiti', 'hypercalcem', 'femal', 'czechoslovakia', 'lessen', 'statur', 'phenomena', 'lateact', 'auscultatori', 'hungri', 'pomb', 'disproport', 'globus', 'cucumerina', 'subscriptionbas', 'cilengitid', 'hivseroposit', 'disclos', 'function', 'autophagydefici', 'ltd', 'nhejdepend', 'tumordriven', 'substratum', 'substantia', 'offici', 'ethnicityspecif', 'plu', 'tsctic', 'intract', 'bordetella', 'estron', 'selfassess', 'tmposit', 'ppilik', 'gabpba', 'endosteallin', 'fifteen', 'core', 'nfκbdepend', 'learn', 'pacapspecif', 'contextur', 'reductionoxid', 'oliguria', 'cfainduc', 'vecadherin', 'hivneg', 'abstractmicrorna', 'eufa', 'oscillometr', 'anthropomorph', 'retroperiton', 'scbvkaiyuan', 'dextran', 'account', 'restitut', 'cancerrecruit', 'codomin', 'hcmvpermiss', 'japonica', 'northeastern', 'zfns', 'anyth', 'eprostanoid', 'blastema', 'anticitrullin', 'spore', 'blooddifferenti', 'lymphotoxinalphabeta', 'endothelialhaematopoiet', 'sitedepend', 'adher', 'insitu', 'fecund']
@@ -246,7 +246,8 @@ Query ID: 3
 ---
 
 ## 7. Mean Average Precision (MAP) Score
-(Present MAP score computed using `trec_eval` and interpret the results.)
+The Mean Average Precision (MAP) score computed using trec_eval for our best run is **0.9707**.
+This indicates that our retrieval model ranks relevant documents very effectively. The result can be found at: results/trec-map-result.png
 
 ---
 
