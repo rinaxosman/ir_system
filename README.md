@@ -18,6 +18,7 @@ Rina Osman
 - Step 2 (Indexing): Built the inverted index and structured it for efficient document retrieval.
 - Step 3 (Retrieval & Ranking): Implemented cosine similarity to rank documents based on relevance to queries.
 - Processed and formatted the system output into Results.txt in TREC format.
+- Debugged for trec eval
 - Compared retrieval effectiveness between title-only and full-text queries.
 - Report Sections: #3, #6, #8
 
@@ -266,6 +267,6 @@ Observations:
 ## 8. Conclusion
 In this assignment, we built an **Information Retrieval (IR) system** using the **vector space model**, with **TF-IDF weighting and cosine similarity** to rank documents from the SciFact dataset. Our **preprocessing pipeline** helped clean and organize the text by applying **tokenization, stopword removal, and stemming**, making indexing and retrieval more efficient. The **inverted index** allowed for fast lookups, and our **retrieval module** showed how different query methods (title only vs. full text) affected results.  
 
-From our evaluation, we found that **full-text retrieval ranked more relevant documents higher**, improving recall but sometimes lowering precision. The **Mean Average Precision (MAP) scores** backed this up, showing the trade off between precision and recall. While our system performed well, there’s room for improvement, such as using **BM25 for better ranking, query expansion for better recall, and incorporating synonyms or domain-specific terms**.  
+From our evaluation, we found that full-text retrieval ranked more relevant documents higher, improving recall but sometimes lowering precision. The Mean Average Precision (MAP) scores confirmed this, showing a balance between precision and recall. While our system performed well, there is room for improvement, such as using BM25 for better ranking, query expansion to improve recall, and incorporating synonyms or domain-specific terms.
 
 Overall, this project gave us a hands-on understanding of **search algorithms, ranking strategies, and the real-world challenges of information retrieval**, making it a great learning experience.
