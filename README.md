@@ -20,7 +20,7 @@ Rina Osman
 - Processed and formatted the system output into Results.txt in TREC format.
 - Debugged for trec eval
 - Compared retrieval effectiveness between title-only and full-text queries.
-- Report Sections: #3, #6, #8
+- Report Sections: #3, #6, #7, #8
 
 
 Uvil Dahanayake
@@ -28,7 +28,7 @@ Uvil Dahanayake
 - Assisted in comparing retrieval performance for different query modes.
 - Contributed to writing and structuring key report sections.
 - Wrote sections for Introduction, Functionality of the Program, Query Results & Discussion, and Mean Average Precision (MAP) Score.
-- Report Sections: #1, #2, #7
+- Report Sections: #1, #2
 
 ---
 
