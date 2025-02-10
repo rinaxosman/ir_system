@@ -246,8 +246,20 @@ Query ID: 3
 ---
 
 ## 7. Mean Average Precision (MAP) Score
-The Mean Average Precision (MAP) score computed using trec_eval for our best run is **0.9707**.
-This indicates that our retrieval model ranks relevant documents very effectively. The result can be found at: results/trec-map-result.png
+
+The Mean Average Precision (MAP) score was computed using trec_eval for different retrieval approaches:
+
+- Title-Only Retrieval → 0.9585
+- Title + Full Text Retrieval → 0.9585
+- Best Overall Run → 0.9707
+These results indicate that our retrieval system is highly effective at ranking relevant documents. The best run achieves 0.9707, showing strong precision in retrieving relevant results.
+
+Observations:
+- Both title-only and title + full-text retrieval achieve nearly identical MAP scores (0.9585), suggesting that adding full text does not significantly impact ranking effectiveness in this dataset.
+- The best run (0.9707) suggests some improvements were made, likely due to better ranking or query processing optimizations.
+- The high scores overall indicate that the model retrieves highly relevant documents early in the ranking process.
+
+✅ The MAP computation results can be found at: results/trec-map-result.png.
 
 ---
 
