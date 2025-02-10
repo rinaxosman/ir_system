@@ -1,5 +1,14 @@
 # CSI4107 - Assignment 1: Information Retrieval System
 
+## Important Notes on Code Structure
+For simplicity, the three main steps of the system can be found in the following scripts:
+
+- Step 1 (Preprocessing) → src/preprocess.py (Output: data/scifact/preprocessed_corpus.json)
+- Step 2 (Indexing) → src/index.py (Output: data/scifact/inverted_index.json)
+- Step 3 (Retrieval & Ranking) → src/retrieval.py (Output: results/Results.txt)
+
+Other helper methods in the repository assist with retrieving insights, analyzing results, and evaluating performance.
+
 ## Team Members
 - Rina Osman - 300222206
 - Fatima Ghadbawi - 300301842
